@@ -11,7 +11,7 @@ const options = {
 };
 
 // Directory to serve
-const directoryToServe = 'src/html/login.html';
+const directoryToServe = './';
 
 // Create HTTPS server
 const server = https.createServer(options, (req, res) => {

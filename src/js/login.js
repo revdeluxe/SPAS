@@ -1,5 +1,7 @@
-// Login credentials
-const users = ("./users.json");
+const fs = require('fs');
+
+// Read login credentials from users.json
+const users = JSON.parse(fs.readFileSync('./users.json', 'utf8'));
 
 // Login Form Element
 const loginForm = document.getElementById('loginFormElement');
@@ -19,11 +21,8 @@ loginForm.addEventListener('submit', function(event) {
 
   // Check if username exists in users and password matches
   if (users[username] && users[username].password === password) {
-    // Show logout form and hide login form
-    loginForm.reset();
-    loginForm.style.display = 'none';
-    logoutForm.style.display = 'block';
-    loggedInUser.textContent = username;
+    // Redirect to a specific HTML page
+    window.location.href = '.../home.html';
   } else {
     alert('Invalid username or password. Please try again.');
   }

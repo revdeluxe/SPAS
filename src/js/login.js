@@ -1,8 +1,5 @@
-// Load the fs (File System) module
-const fs = require('fs');
-
-// Load user data from JSON file
-const userData = JSON.parse(fs.readFileSync('users.json', 'utf8'));
+// Login credentials
+const users = ("./users.json");
 
 // Login Form Element
 const loginForm = document.getElementById('loginFormElement');
@@ -20,8 +17,8 @@ loginForm.addEventListener('submit', function(event) {
   const username = loginForm.elements['username'].value;
   const password = loginForm.elements['password'].value;
 
-  // Check if username exists in userData and password matches
-  if (userData[username] && userData[username].password === password) {
+  // Check if username exists in users and password matches
+  if (users[username] && users[username].password === password) {
     // Show logout form and hide login form
     loginForm.reset();
     loginForm.style.display = 'none';

@@ -27,7 +27,7 @@ const server = https.createServer(options, (req, res) => {
       return;
     }
 
-    // If file exists, read its contents and serve
+    // If file exists
     fs.readFile(filePath, (err, data) => {
       if (err) {
         // If error reading file, send 500 response
@@ -36,8 +36,15 @@ const server = https.createServer(options, (req, res) => {
         return;
       }
 
-      // Write HTTP header
-      res.writeHead(200, {'Content-Type': 'text/html'});
+      // Determine content type based on file extension
+      let contentType = 'application/octet-stream';
+      const ext = path.extname(filePath);
+      if (ext === '.csv') {
+        contentType = 'text/csv';
+      }
+
+      // Write HTTP header with appropriate content type
+      res.writeHead(200, {'Content-Type': contentType});
 
       // Write file contents to response
       res.end(data);

@@ -8,24 +8,62 @@
     <title>Smarl Public Address System</title>
 </head>
 <body>
-    <script></script>
     <div>
         <h2 class="header0">Smart Public Address System</h2>
         <ul class="menubar">
-            <li><a id="colleges">Colleges</a></li>
-            <li><a id="alarm">Alarm</a></li>
-            <li><a id="stream">Audio Stream</a></li>
-            <li><a id="settings">Configuration</a></li>
-            <li><a id="about">About</a></li>
-            <li><a id="logout">Log-Out</a></li>
+            <li><a id="colleges" onclick="frameControl('colleges.html')">Colleges</a></li>
+            <li><a id="alarm" onclick="frameControl('alarm.html')">Alarm</a></li>
+            <li><a id="stream" onclick="frameControl('stream.html')">Audio Stream</a></li>
+            <li><a id="settings" onclick="frameControl('settings.html')">Configuration</a></li>
+            <li><a id="about" onclick="frameControl('about.html')">About</a></li>
+            <li><a id="logout" onclick="logOut()">Log-Out</a></li>
             <li style="float: right;"><span class="user" id="user"></span></li>
           </ul>
     </div>
     <hr>
     <div class="dashboard">
-        <button class="refresh" id="refresh">Refresh</button><br>
-        <iframe id="" src="" frameborder="1"></iframe>
+        <button class="refresh" onclick="refresh()">Refresh</button><br>
+        <iframe id="frame" src="" frameborder="0"></iframe>
     </div>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve session from sessionStorage
+            const session = JSON.parse(sessionStorage.getItem('session'));
+          
+            // Check if session is available and has a username
+            if (session && session.username) {
+              // Display the username
+              const username = session.username;
+              alert(`Welcome, ${username}!`);
+              // You can further use the username as needed
+              console.log(`User's username: ${username}`);
+            } else {
+              // If session or username is not available, redirect to login page
+              window.location.href = 'login.html';
+            }
+          });
+    </script>
+    <script>
+        let colleges=document.getElementById("colleges");
+        let alarm=document.getElementById("alarm");
+        let stream=document.getElementById("stream");
+        let settings=document.getElementById("settings");
+        let about=document.getElementById("about");
+        let logout=document.getElementById("logout");
+        let user=document.getElementById("user");
+        let frame=document.getElementById("frame");
+
+        function refresh(){
+            frame.location.reload;
+        }
+
+        function logOut(){
+
+        }
+
+        function frameControl(page){
+            frame.attributes.src(page);
+        }
+    </script>
 </body>
 </html>

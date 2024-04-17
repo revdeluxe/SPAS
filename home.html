@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./menubar.css">
+    <link rel="stylesheet" href="./main.css">
     <link rel="script" href="../js/jssip.js">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Smarl Public Address System</title>
 </head>
 <body>
+    <script></script>
     <div>
         <h2 class="header0">Smart Public Address System</h2>
         <ul class="menubar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#news">Configuration</a></li>
-            <li style="float:right;"><a class="active" href="#about">About</a></li>
+            <li><a id="colleges">Colleges</a></li>
+            <li><a id="alarm">Alarm</a></li>
+            <li><a id="stream">Audio Stream</a></li>
+            <li><a id="settings">Configuration</a></li>
+            <li><a id="about">About</a></li>
+            <li><a id="logout">Log-Out</a></li>
+            <li style="float: right;"><span class="user" id="user"></span></li>
           </ul>
     </div>
-    
+    <hr>
+    <div class="dashboard">
+        <button class="refresh" id="refresh">Refresh</button><br>
+        <iframe id="" src="" frameborder="1"></iframe>
+    </div>
     
 </body>
 </html>

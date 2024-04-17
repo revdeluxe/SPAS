@@ -1,0 +1,79 @@
+:root{
+  --bg-0: #0f123f;
+  --bg-1: #f4f7fc;
+  --bg-accent-0: #ee786c;
+  --bg-accent-1: #ebf2fa;
+}
+@font-face {
+  font-family: NotoSansJP;
+  src: url(src/fonts/NotoSansJP-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: RedditMono;
+  src: url(src/fonts/RedditMono-VariableFont_wght.ttf);
+}
+body{
+  background-color: var(--bg-0);
+  font-family: RedditMono;
+  
+}
+.header0{
+  background-color: var(--bg-1);
+  padding: 35px;
+  text-align: center;
+  border-radius: 5px;
+}
+ul {
+  border-radius: 5px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--bg-1);
+  }
+  
+li {
+    float: left;
+  }
+  
+li:last-child {
+    border-right: none;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: var(--bg-accent-1);
+  }
+  
+  li a:active {
+    background-color: var(--bg-accent-0);
+  }
+
+.dashboard{
+  
+}
+.refresh{
+  font-family: RedditMono;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--bg-accent-0);
+}
+.refresh:hover{
+  font-family: RedditMono;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--bg-accent-1);
+}
+.refresh:active{
+  font-family: RedditMono;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--bg-accent-0);
+}
